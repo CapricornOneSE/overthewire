@@ -1,13 +1,24 @@
-## 
-## Useful commands used to solve the bandit wargame
-##
+########################################################################
+### Commands used to solve - http://overthewire.org/wargames/bandit/ ###
+########################################################################
 
-
-## IN-LINE FOR LOOP
+## bandit3 - check the file type for each file in this directory
 for f in ./*; do file $f; done
 
-## FIND AND CONCAT FILES OF SIZE, THAT ARE HUMAN-READABLE BUT NON-EXECUTABLE
+## bandit4 - find and concat files of size, that are human-readable but non-executable
 find . \! -executable -readable -size 1033c -exec cat {} +
 
-## FIND AND CONCAT FILES OF SIZE, THAT BELONG TO USER & GROUP; IGNORING ERRORS (PERMISSION DENIED)
+## bandit5 - find and concat files of size, that belong to user & group; ignoring errors (permission denied)
 find . -user bandit7 -group bandit6 -size 33c -print 2>/dev/null -exec cat {} +
+
+## bandit6 - concat a file and pattern match the output
+cat data.txt | grep millionth
+
+## bandit7 - concat a file, sort the output, and then print the unique lines
+cat data.txt | sort | uniq -u
+
+## bandit8 - concat a file, print he 'printable' strings of printable characters, pattern match for '='
+cat data.txt | strings | grep =
+
+## bandit9 - concat a file and base64 decode the output
+cat data.txt | base64 -d
