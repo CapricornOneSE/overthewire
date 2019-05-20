@@ -1,8 +1,13 @@
-IN-LINE FOR LOOP
+## 
+## Useful commands used to solve the bandit wargame
+##
+
+
+## IN-LINE FOR LOOP
 for f in ./*; do file $f; done
 
-FIND AND CONCAT FILES OF SIZE, THAT ARE HUMAN-READABLE BUT NON-EXECUTABLE
+## FIND AND CONCAT FILES OF SIZE, THAT ARE HUMAN-READABLE BUT NON-EXECUTABLE
 find . \! -executable -readable -size 1033c -exec cat {} +
 
-FIND AND CONCAT FILES OF SIZE, THAT BELONG TO USER & GROUP; IGNORING ERRORS (PERMISSION DENIED)
+## FIND AND CONCAT FILES OF SIZE, THAT BELONG TO USER & GROUP; IGNORING ERRORS (PERMISSION DENIED)
 find . -user bandit7 -group bandit6 -size 33c -print 2>/dev/null -exec cat {} +
