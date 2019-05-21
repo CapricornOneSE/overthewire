@@ -1,5 +1,5 @@
 ########################################################################
-### Commands used to solve - http://overthewire.org/wargames/bandit/ ###
+### Solutions for - http://overthewire.org/wargames/bandit/ ###
 ########################################################################
 
 ## bandit4 - check the file type for each file in this directory
@@ -25,3 +25,12 @@ cat data.txt | base64 -d
 
 ## bandit11 - concat a file and translate/rotate alphabetical characters 13 positions - i.e. 'a' to 'n', 'z' to 'm', etc. 
 cat data.txt | tr a-zA-Z n-za-mN-ZA-M
+
+## bandit12 -
+mkdir /tmp/myTemptDir; cp data.txt /tmp/myTempDir/data.txt; cd /tmp/myTempDir
+cat data.txt | xxd -r >output.gz
+gunzip output.gz
+bunzip2 output.bz2
+gunzip output.gz
+tar --extract -f output
+...ad finem...

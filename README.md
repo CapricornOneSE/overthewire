@@ -1,4 +1,18 @@
 # overthewire
-Repo for passwords and useful commands used to solve overthewire wargames.
+Passwords and solutions to the overthewire wargames.
+
+      ,----..            ,----,          .---. 
+     /   /   \         ,/   .`|         /. ./|
+    /   .     :      ,`   .'  :     .--'.  ' ;
+   .   /   ;.  \   ;    ;     /    /__./ \ : |
+  .   ;   /  ` ; .'___,/    ,' .--'.  '   \' .
+  ;   |  ; \ ; | |    :     | /___/ \ |    ' ' 
+  |   :  | ; | ' ;    |.';  ; ;   \  \;      : 
+  .   |  ' ' ' : `----'  |  |  \   ;  `      |
+  '   ;  \; /  |     '   :  ;   .   \    .\  ; 
+   \   \  ',  /      |   |  '    \   \   ' \ |
+    ;   :    /       '   :  |     :   '  |--"  
+     \   \ .'        ;   |.'       \   \ ;     
+  www. `---` ver     '---' he       '---" ire.org 
 
 http://overthewire.org/wargames/
