@@ -3,39 +3,30 @@
 ###############################################################
 
 ::bandit4::
-[explainshell](https://explainshell.com/explain?cmd=for+f+in+.%2F*%3B+do+file+%24f%3B+done)
 for f in ./*; do file $f; done
 
 ::bandit5::
-[explainshell](https://explainshell.com/explain?cmd=find+.+%5C%21+-executable+-readable+-size+1033c+-exec+cat+%7B%7D+%2B)
 find . \! -executable -readable -size 1033c -exec cat {} +
 
 ::bandit6::
-[explainshell](https://explainshell.com/explain?cmd=find+.+-user+bandit7+-group+bandit6+-size+33c+-print+2%3E%2Fdev%2Fnull+-exec+cat+%7B%7D+%2B)
 find . -user bandit7 -group bandit6 -size 33c -print 2>/dev/null -exec cat {} +
 
 ::bandit7::
-[explainshell](https://explainshell.com/explain?cmd=cat+data.txt+%7C+grep+millionth)
 cat data.txt | grep millionth
 
 ::bandit8::
-[explainshell](https://explainshell.com/explain?cmd=cat+data.txt+%7C+sort+%7C+uniq+-u)
 cat data.txt | sort | uniq -u
 
 ::bandit9::
-[explainshell](https://explainshell.com/explain?cmd=cat+data.txt+%7C+strings+%7C+grep+%3D)
 cat data.txt | strings | grep =
 
 ::bandit10::
-[explainshell](https://explainshell.com/explain?cmd=cat+data.txt+%7C+base64+-d)
 cat data.txt | base64 -d
 
 ::bandit11::
-[explainshell](https://explainshell.com/explain?cmd=cat+data.txt+%7C+tr+a-zA-Z+n-za-mN-ZA-M)
 cat data.txt | tr a-zA-Z n-za-mN-ZA-M
 
 ::bandit12::
-[explainshell](https://explainshell.com/explain?cmd=cat+data.txt+%7C+xxd+-r+%3Eoutput.gz)
 mkdir /tmp/myTemptDir; cp data.txt /tmp/myTempDir/data.txt; cd /tmp/myTempDir
 cat data.txt | xxd -r >output.gz
 gunzip output.gz
@@ -45,9 +36,23 @@ tar --extract -f output
 ...ad finem...
 
 ::bandit13::
-[explainshell](https://explainshell.com/explain?cmd=ssh+-i+sshkey.private+bandit14%40localhost)
 ssh -i sshkey.private bandit14@localhost
 
 ::bandit14::
-[explainshell](https://explainshell.com/explain?cmd=echo+4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e+%7C+nc+localhost+30000) 
 echo 4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e | nc localhost 30000
+
+::bandit15::
+openssl s_client -connect localhost:30001
+
+::bandit16::
+nmap localhost -p 31000-32000
+openssl s_client -connect localhost:31790
+Copy private key response to new file - key.private
+chmod 600 key.private
+ssh -i key.private bandit17@localhost
+
+::bandit17::
+diff passwords.old passwords.new
+
+::bandit18::
+ssh -p 2220 bandit18@bandit.labs.overthewire.org cat readme
