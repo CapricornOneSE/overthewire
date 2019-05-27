@@ -47,7 +47,7 @@ openssl s_client -connect localhost:30001
 ::bandit16::
 nmap localhost -p 31000-32000
 openssl s_client -connect localhost:31790
-Copy private key response to new file - key.private
+copy private key response to new file - key.private
 chmod 600 key.private
 ssh -i key.private bandit17@localhost
 
@@ -56,3 +56,14 @@ diff passwords.old passwords.new
 
 ::bandit18::
 ssh -p 2220 bandit18@bandit.labs.overthewire.org cat readme
+
+::bandit19::
+./bandit20-do cat /etc/bandit_pass/bandit20
+
+::bandit20::
+create two sessions with tmux
+in one session - echo GbKksEFF4yrVs6il55v6gwY5aVje5f0j | nc -l -p 12345
+in another - ./suconnect 12345
+
+::bandit21::
+cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
