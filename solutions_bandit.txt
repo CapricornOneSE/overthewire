@@ -34,3 +34,6 @@ bunzip2 output.bz2
 gunzip output.gz
 tar --extract -f output
 ...ad finem...
+
+## bandit13 - 
+ssh -i sshkey.private bandit14@localhost
